@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+  <title>前端页面</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <script src="../js/jquery-2.2.4.min.js"></script>
+</head>
+<style>
+  .body_main {
+    margin-top: 10px;
+  }
+
+  .main_header {
+    height: 10px;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+
+  .tab {
+    width: 300px;
+    height: 300px;
+    margin: 30px auto;
+    overflow: hidden;
+  }
+
+  .main_nav {
+    width: 25%;
+  }
+
+  .main_nav>ul>li {
+    display: block;
+    padding: 10px;
+    width: 90%;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid #dfdfdf;
+    border-right: 1px solid #dfdfdf;
+    cursor: pointer;
+  }
+
+  .content {
+    /* height: 270px; */
+    /* overflow: hidden; */
+  }
+
+  #myIframe {
+    float: left;
+    width: 75%;
+    min-height: 1280px;
+    overflow: auto;
+  }
+  /* 移动端样式 */
+
+  @media (max-width: 640px) {
+    .header_warp {
+      height: 60px;
+      background: #ff5400;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+    .header {
+      height: 60px;
+      width: 95%;
+      margin: 0 auto;
+    }
+    .header_title {
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+      line-height: 60px;
+    }
+    .header_title span {
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+    }
+    .body_warp {
+      width: 100%;
+      /* margin: 0 auto; */
+      padding-top: 60px;
+      position: absolute;
+      top: 0;
+      left: 0px;
+      background: #ffffff;
+      /* min-height: 561px; */
+    }
+    .body_main {
+      width: 100%;
+      margin: 0 auto;
+      /* margin-bottom: 20px; */
+      border: 1px solid #dfdfdf;
+      border-radius: 0;
+      /* background-color: #ffffff; */
+    }
+    .main_header {
+      height: 0;
+      /* line-height: 46px; */
+      /* padding: 0 20px 0 20px; */
+      border-bottom: 0;
+      /* font-size: 16px; */
+    }
+    .main_nav {
+      width: 30%;
+      position: fixed;
+    }
+    .main_nav>ul>li {
+      display: block;
+      padding: 10px 5px;
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+      border-bottom: 1px solid #dfdfdf;
+      cursor: pointer;
+    }
+    #myIframe {
+      float: left;
+      width: 70%;
+      min-height: 1280px;
+      overflow: auto;
+      position: absolute;
+      left: 30%;
+    }
+  }
+</style>
+<body>
+  <div class="header_warp">
+    <div class="header">
+      <div class="header_title">
+        <img src="../images/afterLogo.png" id="imgId" width="70" height="40">
+        <span>聚房宝APP管理系统</span>
+      </div>
+    </div>
+  </div>
+  <div class="body_warp">
+    <div class="body_main clear">
+      <div class="main_header"></div>
+      <!-- 左侧项目导航栏 -->
+      <div class="main_nav fl">
+        <ul>
+          <li data-url="APP_Administration1.1.html">新疆广汇新疆广汇</li>
+          <li data-url="APP_Administration2.html">佛山汇诚</li>
+          <li data-url="APP_Administration3.html">重庆同成</li>
+        </ul>
+      </div>
+      <!-- 右侧对应项目二维码 -->
+      <iframe id="myIframe" src="APP_Administration1.1.html" scrolling="no" frameborder="0"></iframe>
+    </div>
+  </div>
+</body>
+<script>
+  $(function () {
+    $(".main_nav ul li").click(function () {
+      var _url = $(this).attr("data-url");
+      $("#myIframe").attr("src", _url);
+    });
+
+    $("#myIframe").load(function () {
+      var _height = $(this).contents().find("html").height();
+      $("#myIframe").css("height", _height + 'px');
+    });
+    $(".guoqi").load(function () {
+      var _height = $(this).contents().find("html").height();
+      console.log(_height);
+      $(".guoqi").css("height", _height + 'px');
+    });
+    $(window).resize(function () {
+      var _height = $("#myIframe").contents().find("html").height();
+      $("#myIframe").css("height", _height + 'px');
+      var _height = $(".guoqi").contents().find("html").height();
+      console.log(_height);
+      $(".guoqi").css("height", _height + 'px');
+    });
+  });
+
+</script>
+</html>

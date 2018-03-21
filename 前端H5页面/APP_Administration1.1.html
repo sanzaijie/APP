@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <script src="../js/jquery-2.2.4.min.js"></script>
+</head>
+<style>
+  html,
+  body {
+    height: auto;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .content {
+    border-left: 1px solid #dfdfdf;
+  }
+
+  .cont {
+    border-bottom: 1px solid #dfdfdf;
+  }
+
+
+  .con_left,
+  .con_right {
+    display: block;
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .android {
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    background: #c3c3c3;
+    color: #ffffff;
+    text-align: center;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+
+  .ios {
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    background: #ff5400;
+    color: #ffffff;
+    text-align: center;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+
+  .line_title {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #dfdfdf;
+  }
+
+  .line_left,
+  .line_right {
+    display: block;
+    width: 50%;
+    text-align: center;
+    /* border-top: 1px solid #dfdfdf; */
+    border-bottom: 1px solid #dfdfdf;
+  }
+
+  .QRimg {
+    height: 180px;
+    line-height: 178px;
+    width: 180px;
+    margin: 10px auto;
+  }
+
+  .QRimg img {
+    border: 1px solid #dfdfdf;
+    width: 100%;
+  }
+
+  .QRurl {
+    height: 40px;
+    line-height: 40px;
+    width: 180px;
+    background: #ff5400;
+    color: #ffffff;
+    text-align: center;
+    margin: 20px auto;
+    /* cursor: pointer; */
+  }
+
+  .QRurl a {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+
+  .QRdata {
+    margin-bottom: 20px;
+    height: 40px;
+  }
+
+
+  @media (max-width: 640px) {
+    .content {
+      padding-top: 1rem;
+      height: 100%
+    }
+    .cont {
+      border-bottom: 0;
+    }
+    .ios {
+      height: 30px;
+      line-height: 30px;
+      width: 80%;
+      background: #ff5400;
+      color: #ffffff;
+      text-align: center;
+      margin: 0 auto;
+      cursor: pointer;
+    }
+    .android {
+      height: 30px;
+      line-height: 30px;
+      width: 80%;
+      background: #c3c3c3;
+      color: #ffffff;
+      text-align: center;
+      margin: 0 auto;
+      cursor: pointer;
+    }
+    .line_title {
+      border-bottom: 0;
+    }
+    .line_left,
+    .line_right {
+      float: none;
+      width: 100%;
+    }
+    .QRimg {
+      height: auto;
+      width: 50%;
+      margin: 0 auto;
+      line-height: 0;
+    }
+    .QRurl {
+      height: 40px;
+      line-height: 40px;
+      width: 50%;
+      background: #ff5400;
+      color: #ffffff;
+      text-align: center;
+      margin: 20px auto;
+      cursor: pointer;
+    }
+    .QRurl a {
+      color: #ffffff;
+    }
+    .QRdata {
+      font-size: 0.5rem;
+    }
+    .guoqi {
+      width: 100%;
+      border: 1px solid #dfdfdf;
+    }
+  }
+</style>
+<body>
+  <div class="content">
+    <div class="cont clear">
+      <div class="con_left fl">
+        <div id="ios_body" class="ios">
+          <strong>IOS系统</strong>
+        </div>
+      </div>
+      <div class="con_right fl">
+        <div id="and_body" class="android">
+          <strong>android系统</strong>
+        </div>
+      </div>
+    </div>
+    <div class="IOS_main">
+      <div class="line_1 clear">
+        <div class="line_left fl">
+          <div class="line_title clear">
+            <div class="con_left">
+              <strong>移动销售</strong>
+            </div>
+          </div>
+          <div class="QRimg">
+            <img src="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=bfabe3bc982397ddc274905638ebd9d2/d53f8794a4c27d1e0888e19f12d5ad6eddc4383b.jpg"
+              alt="">
+          </div>
+          <div class="QRurl">
+            <a href=""><strong>二维码地址</strong></a>
+          </div>
+          <div class="QRdata">
+            <strong>最新更新时间</strong>
+            <span class="">2017-09-22 16:14:30</span>
+          </div>
+        </div>
+        <div class="line_right fl">
+          <div class="line_title clear">
+            <div class="con_right">
+              <strong></strong>
+            </div>
+          </div>
+          <div class="QRimg">
+            <img src="../images/pic-yiguoqi.png" alt="">
+          </div>
+          <div class="QRurl">
+            <a href=""><strong>二维码地址</strong></a>
+          </div>
+          <div class="QRdata">
+            <strong>最新更新时间</strong>
+            <span class="">2017-09-22 16:14:30</span>
+          </div>
+        </div>
+      </div>
+      <div class="line_2 clear">
+        <div class="line_left fl">
+          <div class="line_title clear">
+            <div class="con_left">
+              <strong>小蜜蜂</strong>
+            </div>
+          </div>
+          <div class="QRimg">
+            <img src="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=bfabe3bc982397ddc274905638ebd9d2/d53f8794a4c27d1e0888e19f12d5ad6eddc4383b.jpg"
+              alt="">
+          </div>
+          <div class="QRurl">
+            <a href=""><strong>二维码地址</strong></a>
+          </div>
+          <div class="QRdata">
+            <strong>最新更新时间</strong>
+            <span class="">2017-09-22 16:14:30</span>
+          </div>
+        </div>
+        <div class="line_right fl">
+          <div class="line_title clear">
+            <div class="con_right">
+              <strong>XXXXXX</strong>
+            </div>
+          </div>
+          <div class="QRimg">
+            <img src="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=bfabe3bc982397ddc274905638ebd9d2/d53f8794a4c27d1e0888e19f12d5ad6eddc4383b.jpg"
+              alt="">
+          </div>
+          <div class="QRurl">
+            <a href=""><strong>二维码地址</strong></a>
+          </div>
+          <div class="QRdata">
+            <strong>最新更新时间</strong>
+            <span class="">2017-09-22 16:14:30</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="AND_main" style="display:none;">
+      <div class="line_1 clear">
+        <div class="line_left fl">
+          <div class="line_title clear">
+            <div class="con_left">
+              <strong>移动销售AAA</strong>
+            </div>
+          </div>
+          <div class="QRimg">
+            <img src="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=bfabe3bc982397ddc274905638ebd9d2/d53f8794a4c27d1e0888e19f12d5ad6eddc4383b.jpg"
+              alt="">
+          </div>
+          <div class="QRurl">
+            <strong>二维码地址</strong>
+          </div>
+          <div class="QRdata">
+            <strong>最新更新时间</strong>
+            <span class="">2017-09-22 16:14:30</span>
+          </div>
+        </div>
+        <div class="line_right fl">
+          <div class="line_title clear">
+            <div class="con_right">
+              <strong>移动话务</strong>
+            </div>
+          </div>
+          <div class="QRimg">
+            <img src="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=bfabe3bc982397ddc274905638ebd9d2/d53f8794a4c27d1e0888e19f12d5ad6eddc4383b.jpg"
+              alt="">
+          </div>
+          <div class="QRurl">
+            <strong>二维码地址</strong>
+          </div>
+          <div class="QRdata">
+            <strong>最新更新时间</strong>
+            <span class="">2017-09-22 16:14:30</span>
+          </div>
+        </div>
+      </div>
+      <div class="line_2 clear">
+        <div class="line_left fl">
+          <div class="line_title clear">
+            <div class="con_left">
+              <strong>小蜜蜂</strong>
+            </div>
+          </div>
+          <div class="QRimg">
+            <img src="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=bfabe3bc982397ddc274905638ebd9d2/d53f8794a4c27d1e0888e19f12d5ad6eddc4383b.jpg"
+              alt="">
+          </div>
+          <div class="QRurl">
+            <strong>二维码地址</strong>
+          </div>
+          <div class="QRdata">
+            <strong>最新更新时间</strong>
+            <span class="">2017-09-22 16:14:30</span>
+          </div>
+        </div>
+        <div class="line_right fl">
+          <div class="line_title clear">
+            <div class="con_right">
+              <strong>XXXXXX</strong>
+            </div>
+          </div>
+          <div class="QRimg">
+            <img src="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=bfabe3bc982397ddc274905638ebd9d2/d53f8794a4c27d1e0888e19f12d5ad6eddc4383b.jpg"
+              alt="">
+          </div>
+          <div class="QRurl">
+            <strong>二维码地址</strong>
+          </div>
+          <div class="QRdata">
+            <strong>最新更新时间</strong>
+            <span class="">2017-09-22 16:14:30</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  $(function () {
+    $('.cont div div').click(function () {
+      var _class = $(this).attr('id');
+      if (_class == 'ios_body') {
+        $('.AND_main').hide();
+        $('.IOS_main').show();
+        $('#ios_body').attr('class', 'ios');
+        $('#and_body').attr('class', 'android');
+      }
+      if (_class == 'and_body') {
+        $('.IOS_main').hide();
+        $('.AND_main').show();
+        $('#ios_body').attr('class', 'android');
+        $('#and_body').attr('class', 'ios');
+      }
+    });
+    $(".guoqi").load(function () {
+      var _height = $(this).contents().find("html").height();
+      console.log(_height);
+      $(".guoqi").css("height", _height + 'px');
+    });
+  });
+
+
+
+
+// function checked() {
+//     $('.ios').css("background","#ff5400") ||
+//     $('.android')
+//   }
+
+</script>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>登录页</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/reset.css">
+  <script src="./js/jquery-2.2.4.min.js"></script>
+</head>
+<style>
+  body {
+    background: #f2f2f2;
+  }
+
+  #upLoad {
+    color: #ffffff;
+    background: #ff5400;
+    width: 60px;
+  }
+
+  #reTurn {
+    color: #ffffff;
+    background: #999999;
+    width: 60px;
+  }
+
+  .body_form_peripheral {
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid #dfdfdf;
+  }
+
+  .peripheral_child {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .body_form_input {
+    height: 30px;
+    width: 180px;
+    display: inline-block;
+    border: 1px solid #dfdfdf;
+    border-radius: 5px;
+    padding: 0 10px;
+  }
+
+  .body_form_fl {
+    height: 32px;
+    line-height: 32px;
+    width: 80px;
+    padding-right: 20px;
+    text-align: right;
+  }
+
+  .star {
+    color: #ff5400;
+  }
+
+  .cpbtn {
+    color: #ff5400;
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+
+  .DmpFine-selectW02 {
+    width: 180px;
+    border: 1px solid #dfdfdf;
+    border-radius: 5px;
+    position: relative;
+  }
+
+  .dmp-select .font_type_id {
+    text-align: left;
+    padding-left: 10px;
+    width: Calc(100% - 30px);
+    height: 30px;
+    line-height: 30px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #555555;
+  }
+
+  .dmp-select span {
+    display: inline-block;
+    width: 30px;
+    border-left: 1px solid #dfdfdf;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 30px;
+    z-index: 2;
+    background: url(images/icon_arrow_down_big.png) no-repeat center;
+    cursor: pointer;
+    transition: width 1s;
+  }
+
+  .dmp-select .dmp-select-option,
+  .dmp-select-option-quick {
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+    background: #fff;
+    border: 1px solid #dfdfdf;
+    -moz-border-radius: 0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+    right: -1px;
+    /* display: none; */
+    max-height: 252px;
+    overflow: auto;
+    top: 28px;
+  }
+
+  .dmp-select-option p,
+  .dmp-select-option-quick p {
+    padding: 0 10px;
+    margin: 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .jian-btn {
+    color: #ff5400;
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+
+  .bw_top {
+    top: 45px;
+  }
+</style>
+<body>
+  <div class="header_warp">
+    <div class="header clear">
+      <div class="header_title fl">
+        <img src="./images/afterLogo.png" id="imgId" width="70" height="40">
+        <span>聚房宝APP管理系统</span>
+      </div>
+      <div class="header_userInfo fr">
+        <img src="./images/icon_t_pic.png" style="margin-bottom:-2px;">&nbsp;
+        <span class="uname">admin</span>
+        <img src="./images/menuTitle-arrow.png" style="margin-bottom:-3px;">&nbsp;
+        <img src="./images/icon_t_close.png" style="margin-bottom:-5px;">
+        <span class="uout">退出</span>
+      </div>
+    </div>
+  </div>
+  <div class="body_warp bw_top">
+    <div class="body_main">
+      <div class="main_header clear">
+        <div class="main_header_left fl">
+          <h1 style="font-weight:800;">编辑</h1>
+        </div>
+        <div class="main_header_right fr">
+          <button id="upLoad">上传</button>
+          <button id="reTurn">返回</button>
+        </div>
+      </div>
+      <div class="body_form">
+        <div class="body_form_name">
+          <div class="body_form_peripheral clear">
+            <div class="body_form_fl fl">
+              <strong>项目</strong>
+            </div>
+            <div class="body_form_fr fl">
+              <input class="body_form_input" type="text">
+            </div>
+          </div>
+        </div>
+        <div class="body_form_addNew">
+          <div class="body_form_peripheral">
+            <div class="peripheral_child clear">
+              <div class="body_form_fl fl">
+                <span class="star">*</span>产品
+              </div>
+              <div class="body_form_fr fl">
+                <input class="body_form_input" type="text"> <button class="cpbtn">+</button>
+              </div>
+            </div>
+            <div class="peripheral_child clear">
+              <div class="body_form_fl fl">
+                <span class="star">*</span>系统
+              </div>
+              <div class="body_form_fr fl">
+                <div class="dmp-select DmpFine-selectW02" id="DmpFine_select3">
+                  <input class="type_id" name="dateTye" type="hidden" value="0">
+                  <div class="font_type_id"></div>
+                  <span class="select"></span>
+                  <div class="dmp-select-option" id="DmpFine_select4" style="display: none;">
+                    <p data-v="0">IOS系统</p>
+                    <p data-v="1">Android系统</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="peripheral_child clear">
+              <div class="body_form_fl fl">
+                <span class="star">*</span>上传链接
+              </div>
+              <div class="body_form_fr fl">
+                <input class="body_form_input" type="text">
+              </div>
+            </div>
+            <div class="peripheral_child clear">
+              <div class="body_form_fl fl">
+                更新时间
+              </div>
+              <div class="body_form_fr fl">
+                <input class="body_form_input" type="text">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 确定删除 -->
+    <div class="mask"></div>
+    <div class="delete">
+      <div class="delete-title">确认信息</div>
+      <div class="delete-main">
+        <h1>请确认是否要删除？</h1>
+      </div>
+      <div class="delete-foot">
+        <input class="yes" type="button" value="确定" style="background:orangered">
+        <input class="no" type="button" value="取消" style="background:#999999">
+      </div>
+    </div>
+    <!-- 确定上传 -->
+    <div class="update">
+      <div class="update-title">确认信息</div>
+      <div class="update-main">
+        <h1>请确认是否要上传？</h1>
+      </div>
+      <div class="update-foot">
+        <input class="yes" type="button" value="确定" style="background:orangered">
+      </div>
+    </div>
+    <!-- 必填项为填提示 -->
+    <div class="Prompt">
+      <div class="Prompt-title">提示信息</div>
+      <div class="Prompt-main">
+        <h1>请输入<span>产品名称！</span></h1>
+      </div>
+      <div class="Prompt-foot">
+        <input class="yes" type="button" value="确定" style="background:orangered">
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  $(function () {
+    $('.body_form').on('click', '.select', function () {
+      if ($(this).next('div').is(':hidden')) {
+        $(this).next('div').show();
+      }
+      $(this).next('div').children('p').on('click', function () {
+        var p = $(this).html();
+        // $(this, '.font_type_id').html(p);
+        $(this).parent().prev().prev().html(p);
+        $(this).parent().hide();
+      })
+    })
+
+
+
+    $(".cpbtn").click(function () {
+      var _html = '<div class="body_form_addNew">\
+                    <div class="body_form_peripheral">\
+                      <div class="peripheral_child clear">\
+                        <div class="body_form_fl fl">\
+                          <span class="star">*</span>产品\
+                        </div>\
+                        <div class="body_form_fr fl">\
+                          <input class="body_form_input" type="text"> <button class="jian-btn">-</button>\
+                        </div>\
+                      </div>\
+                      <div class="peripheral_child clear">\
+                        <div class="body_form_fl fl">\
+                          <span class="star">*</span>系统\
+                        </div>\
+                        <div class="body_form_fr fl">\
+                          <div class="dmp-select DmpFine-selectW02" id="DmpFine_select3">\
+                            <input class="type_id" name="dateTye" type="hidden" value="0">\
+                            <div class="font_type_id"></div>\
+                            <span class="select"></span>\
+                            <div class="dmp-select-option" id="DmpFine_select4" style="display: none;">\
+                              <p data-v="0">IOS系统</p>\
+                              <p data-v="1">Android系统</p>\
+                            </div>\
+                          </div>\
+                        </div>\
+                      </div>\
+                      <div class="peripheral_child clear">\
+                        <div class="body_form_fl fl">\
+                          <span class="star">*</span>上传链接\
+                        </div>\
+                        <div class="body_form_fr fl">\
+                          <input class="body_form_input" type="text">\
+                        </div>\
+                      </div>\
+                      <div class="peripheral_child clear">\
+                        <div class="body_form_fl fl">\
+                          更新时间\
+                        </div>\
+                        <div class="body_form_fr fl">\
+                          <input class="body_form_input" type="text">\
+                        </div>\
+                      </div>\
+                    </div>\
+                  </div>';
+      $(".body_form .body_form_addNew:last").after(_html);
+    });
+
+
+    $(".body_form").on("click", ".jian-btn", function () {
+      // alert("请确认是否删除");
+      $('.mask, .delete').show();
+
+      // $('.mask, .delete').hide();
+
+      $('.delete-foot>input').click(function () {
+        $('.mask, .delete').hide();
+      });
+      $(this).parents(".body_form_addNew").remove();
+      // $('.mask, .delete').hide();
+
+    });
+    $('.main_header').on('click', '#upLoad', function () {
+      $('.mask, .update').show();
+      $('.update-foot>input').click(function () {
+        $('.mask, .update').hide();
+      });
+    });
+  })
+  // window.alert = alert;
+  // function alert(data) {
+  //   var a = document.createElement("div"),
+  //     p = document.createElement("srtong"),
+  //     btn = document.createElement("div"),
+  //     textNode = document.createTextNode(data ? data : ""),
+  //     btnText = document.createTextNode("确定");
+  //   // 控制样式
+  //   css(a, {
+  //     "position": "fixed",
+  //     "left": "50%",
+  //     "top": "50%",
+  //     "height": "150px",
+  //     "width": "300px",
+  //     "margin": "-75px 0 0 -150px",
+  //     "background-color": "#dfdfdf",
+  //     "border-radius": "5px",
+  //     "text-align": "center",
+  //     "z-index": "10000"
+  //   });
+  //   css(p, {
+  //     "display": "block",
+  //     "font-size": "20px",
+  //     "margin": "30px 0"
+  //   });
+  //   css(btn, {
+  //     "margin": "30px auto",
+  //     "height": "35px",
+  //     "line-height": "35px",
+  //     "width": "60px",
+  //     "background": "#ff5400",
+  //     "border-radius": "5px",
+  //     "text-align": "center",
+  //     "color": "#ffffff",
+  //     "cursor": "pointer"
+  //   });
+  //   // 内部结构套入
+  //   p.appendChild(textNode);
+  //   btn.appendChild(btnText);
+  //   a.appendChild(p);
+  //   a.appendChild(btn);
+  //   // 整体显示到页面内
+  //   document.getElementsByTagName("body")[0].appendChild(a);
+  //   // 确定绑定点击事件删除标签
+  //   btn.onclick = function () {
+  //     a.parentNode.removeChild(a);
+  //   }
+  // }
+  // function css(targetObj, cssObj) {
+  //   var str = targetObj.getAttribute("style") ? targetObj.getAttribute("style") : "";
+  //   for (var i in cssObj) {
+  //     str += i + ":" + cssObj[i] + ";";
+  //   }
+  //   targetObj.style.cssText = str;
+  // }
+
+</script>
+</html>

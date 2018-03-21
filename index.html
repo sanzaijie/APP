@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>登录页</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/reset.css">
+  <script src="./js/jquery-2.2.4.min.js"></script>
+</head>
+<style>
+  body {
+    background: #f2f2f2;
+  }
+</style>
+<body>
+  <div class="header_warp">
+    <div class="header clear">
+      <div class="header_title fl">
+        <img src="./images/afterLogo.png" id="imgId" width="70" height="40">
+        <span>聚房宝APP管理系统</span>
+      </div>
+      <div class="header_userInfo fr">
+        <img src="./images/icon_t_pic.png" style="margin-bottom:-2px;">&nbsp;
+        <span class="uname">admin</span>
+        <img src="./images/menuTitle-arrow.png" style="margin-bottom:-3px;">&nbsp;
+        <img src="./images/icon_t_close.png" style="margin-bottom:-5px;">
+        <span class="uout">退出</span>
+      </div>
+    </div>
+  </div>
+  <div class="body_warp">
+    <div class="body_nav clear">
+      <div class="body_navlow fl">
+        <span class="fl">项目</span>
+        <input class="fl" type="text">
+      </div>
+      <div class="body_navbtn fr">
+        <button style="background:#ff5400">查询</button>
+        <button style="background:#999999">重置</button>
+      </div>
+    </div>
+    <div class="body_main">
+      <div class="main_header clear">
+        <div class="main_header_left fl">
+          共<span>X</span>个项目
+        </div>
+        <div class="main_header_right fr">
+          <button id="addNew">新增项目</button>
+        </div>
+      </div>
+      <div class="main_table">
+        <table>
+          <thead>
+            <tr>
+              <td>项目</td>
+              <td>更新时间</td>
+              <td>操作</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>佛山汇诚鸿图</td>
+              <td>2017-09-20 16:05:30</td>
+              <td class="ctrl">
+                <a href="./edit.html">编辑</a>
+                <a id="del" href="#">删除</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="timeout">SaaS</td>
+              <td class="timeout">2017-09-20 16:05:30</td>
+              <td class="ctrl">
+                <a href="#">编辑</a>
+                <a href="#">删除</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="timeout">营销云</td>
+              <td class="timeout">2017-09-20 16:05:30</td>
+              <td class="ctrl">
+                <a href="#">编辑</a>
+                <a href="#">删除</a>
+              </td>
+            </tr>
+            <tr>
+              <td>河北保利拉菲</td>
+              <td>2017-09-20 16:05:30</td>
+              <td class="ctrl">
+                <a href="#">编辑</a>
+                <a href="#">删除</a>
+              </td>
+            </tr>
+            <tr>
+              <td>河北保利拉菲</td>
+              <td>2017-09-20 16:05:30</td>
+              <td class="ctrl">
+                <a href="#">编辑</a>
+                <a href="#">删除</a>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="8">
+                <div class="paging clear">
+                  <div class="gopage clear">
+                    <a href="javascript:void(0);" class="gopage-box noPrveAndNext">首页</a>
+                    <a href="javascript:void(0);" class="gopage-box noPrveAndNext">&lt;上一页</a>
+                    <div class="pagenum clear">
+                      <a href="javascript:void(0);" class="gopage-box selected" no_data="0">1</a>
+                      <a href="javascript:void(0);" class="gopage-box" no_data="0">2</a>
+                      <a href="javascript:void(0);" class="gopage-box" no_data="0">3</a>
+                    </div>
+                    <a href="javascript:void(0);" class="gopage-box noPrveAndNext" id="nextPage" page="2">下一页&gt;</a>
+                    <input class="goPage-input" type="text" name="cpage" onkeyup="this.value=this.value.replace(/\D/g,'')">
+                    <a class="gopage-box" href="javascript:void(0);" id="goPage" style="background:#ff5400;color:#ffffff;">跳转</a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- 遮蔽层 -->
+    <div class="mask"></div>
+    <!-- 新增项目 -->
+    <div class="popup">
+      <div class="popup-title">新增项目</div>
+      <div class="popup-main">
+        <input type="text" name="" id="">
+      </div>
+      <div class="popup-foot">
+        <input type="button" value="保存" style="background:orangered">
+        <input type="button" value="返回" style="background:#999999">
+      </div>
+    </div>
+    <!-- 确定删除项目 -->
+    <div class="delete">
+      <div class="delete-title">新增项目</div>
+      <div class="delete-main">
+        <h1>请确认是否要删除？</h1>
+      </div>
+      <div class="delete-foot">
+        <input type="button" value="确定" style="background:orangered">
+        <input type="button" value="取消" style="background:#999999">
+      </div>
+    </div>
+</body>
+<script>
+  $(function () {
+    // 点击新增项目按钮弹出遮蔽层和表单
+    $('#addNew').click(function () {
+      $('.mask, .popup').show();
+    });
+    // 点击保存或返回隐藏遮蔽层和表单
+    $('.popup-foot>input').click(function () {
+      $('.mask, .popup').hide();
+    });
+
+    $('#del').on('click', function () {
+      $('.mask, .delete').show();
+    })
+    $('.delete-foot>input').click(function () {
+      $('.mask, .delete').hide();
+    });
+  })
+
+</script>
+</html>
